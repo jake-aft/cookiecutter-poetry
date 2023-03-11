@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "cookiecutter-poetry"
-version = "0.1.0"
+version = "0.0.1"
 description = "A python cookiecutter application to create a new python project that uses poetry to manage its dependencies."
-authors = ["Florian Maas <fpgmaas@gmail.com>"]
-repository = "https://github.com/fpgmaas/cookiecutter-poetry"
-documentation = "https://fpgmaas.github.io/cookiecutter-poetry/"
+authors = ["BLX AMPS Team jake@biolexistx.com"]
+repository = "https://git.jetbrains.space/biolexistx/blx-cc/blx-cookiecutter-poetry.git"
+documentation = "https://git.jetbrains.space/biolexistx/blx-cc/blx-cookiecutter-poetry.git"
 readme = "README.md"
-keywords = ['cookiecutter', 'template', 'poetry']
+keywords = ['cookiecutter', 'template', 'poetry', 'Biolexis']
 packages = [
   {include = "cookiecutter_poetry"}
 ]

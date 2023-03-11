@@ -1,4 +1,18 @@
-{% if cookiecutter.open_source_license == 'MIT license' -%}
+
+{% if cookiecutter.open_source_license == 'BLX-IP' -%}
+Biolexis Therapeutics Internal software Intellectual Property
+Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.author }}
+This software is owned by Biolexis Therapeutics,
+and is protected by intellectual property laws and international treaties.
+
+This software is for internal use only and may not be used,
+copied, reproduced, translated, broadcast, modified, license, transmit, distribute, exhibit, perform, publish,
+or display any part, in any form, or by any means except for Biolexis Company activities,
+unless you have obtained the prior written consent of Biolexis Therapeutics.
+
+Reverse engineering, disassembly, or decompilation of this software is prohibited.
+
+{% elif  cookiecutter.open_source_license == 'MIT license' -%}
 MIT License
 
 Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.author }}
