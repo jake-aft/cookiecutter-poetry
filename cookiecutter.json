@@ -1,16 +1,23 @@
 {
-    "author": "BLX AMPS amps@biolexistx.com",
-    "email": "amps@blx-ranch.com",
-    "author_github_handle" : "amps@biolexistx.com",
-    "project_name": "blx-py-package-template",
-    "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
-    "project_description": "BLX Python package repo template using Poetry for their dependency management.",
-    "include_github_actions": ["y","n"],
-    "include_space_automation": ["y","n"],
-    "publish_to": ["pypi", "artifactory", "BLX Space"],
-    "deptry": ["y", "n"],
-    "mkdocs": ["y", "n"],
-    "codecov" : ["y","n"],
-    "dockerfile" : ["y","n"],
-    "open_source_license": ["BLX-IP", "MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3"]
+  "author": "BLX AMPS amps@biolexistx.com",
+  "email": "amps@blx-ranch.com",
+  "author_github_handle": "amps@biolexistx.com",
+  "project_name": "blx-py-package-template",
+  "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
+  "project_description": "BLX Python package repo template using Poetry for their dependency management.",
+  "include_github_actions": ["y", "n"],
+  "include_space_automation": ["y", "n"],
+  "publish_to": ["pypi", "artifactory", "BLX Space"],
+  "deptry": ["y", "n"],
+  "mkdocs": ["y", "n"],
+  "codecov": ["y", "n"],
+  "dockerfile": ["y", "n"],
+  "open_source_license": [
+    "BLX-IP",
+    "MIT license",
+    "BSD license",
+    "ISC license",
+    "Apache Software License 2.0",
+    "GNU General Public License v3"
+  ]
 }

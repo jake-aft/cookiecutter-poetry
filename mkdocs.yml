@@ -1,6 +1,6 @@
 site_name: blx-cookiecutter-poetry
-repo_url: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry 
-site_url: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry 
+repo_url: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry
+site_url: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry
 site_description: A cookiecutter template for Biolexis Python projects that use Poetry for its dependency management
 site_author: Biolexis AMPS Team
 edit_uri: edit/main/docs/
@@ -49,9 +49,9 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry 
+      link: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry
     - icon: fontawesome/brands/python
-      link: https://biolexistx.jetbrains.space/p/blx-cc/packages 
+      link: https://biolexistx.jetbrains.space/p/blx-cc/packages
 markdown_extensions:
   - toc:
       permalink: true

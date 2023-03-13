@@ -1,7 +1,6 @@
-
 ![BLX CookieCutter Poetry]("static//images/cookie-3.png" "BLX CookieCutter Poetry")
 
-<!--- 
+<!---
 [![Release](https://img.shields.io/github/v/release/fpgmaas/cookiecutter-poetry)](https://pypi.org/project/cookiecutter-poetry/)
 [![Build status](https://img.shields.io/github/actions/workflow/status/fpgmaas/cookiecutter-poetry/main.yml?branch=main)](https://github.com/fpgmaas/cookiecutter-poetry/actions/workflows/main.yml?query=branch%3Amain)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/cookiecutter-poetry)](https://pypi.org/project/cookiecutter-poetry/)
@@ -9,14 +8,14 @@
 [![License](https://img.shields.io/github/license/fpgmaas/cookiecutter-poetry)](https://img.shields.io/github/license/fpgmaas/cookiecutter-poetry)
  --->
 
-***This is a modern Cookiecutter template that can be used to initiate a Python project with all the necessary tools for development, testing, and deployment.***
+**_This is a modern Cookiecutter template that can be used to initiate a Python project with all the necessary tools for development, testing, and deployment._**
 We have taken inspiration from the following project:
 [fpgmaas/cookiecutter-poetry](https://raw.githubusercontent.com/fpgmaas/cookiecutter-poetry/main)
 
 **It supports the following features:**
 
-
 ## Template features:
+
 - [Poetry](https://python-poetry.org/) for dependency management
 - CI/CD with [GitHub Actions](https://github.com/features/actions)
   - TODO: REPLACE with Space Automation
@@ -26,16 +25,16 @@ We have taken inspiration from the following project:
   - [black](https://pypi.org/project/black/)
     - TODO: Initial formatting of code with black
   - [ruff](https://github.com/charliermarsh/ruff) Ruff is an extremely fast Python linter, written in Rust.
-    - ⚡️  10-100x faster than existing linters
-    - 🛠️  `pyproject.toml` support
-    - 🤝  Python 3.11 compatibility
-    - 📦  Built-in caching, to avoid re-analyzing unchanged files
-    - 🔧  Autofix support, for automatic error correction (e.g., automatically remove unused imports)
-    - 📏  Over [500 built-in rules](https://beta.ruff.rs/docs/rules/)
-    - ⚖️  [Near-parity](https://beta.ruff.rs/docs/faq/#how-does-ruff-compare-to-flake8) with the built-in Flake8 rule set
-    - 🔌  Native re-implementations of dozens of Flake8 plugins, like flake8-bugbear
-    - ⌨️  First-party editor integrations for [VS Code](https://github.com/charliermarsh/ruff-vscode) and [more](https://github.com/charliermarsh/ruff-lsp)
-    - 🌎  Monorepo-friendly, with [hierarchical and cascading configuration](https://beta.ruff.rs/docs/configuration/#pyprojecttoml-discovery)
+    - ⚡️ 10-100x faster than existing linters
+    - 🛠️ `pyproject.toml` support
+    - 🤝 Python 3.11 compatibility
+    - 📦 Built-in caching, to avoid re-analyzing unchanged files
+    - 🔧 Autofix support, for automatic error correction (e.g., automatically remove unused imports)
+    - 📏 Over [500 built-in rules](https://beta.ruff.rs/docs/rules/)
+    - ⚖️ [Near-parity](https://beta.ruff.rs/docs/faq/#how-does-ruff-compare-to-flake8) with the built-in Flake8 rule set
+    - 🔌 Native re-implementations of dozens of Flake8 plugins, like flake8-bugbear
+    - ⌨️ First-party editor integrations for [VS Code](https://github.com/charliermarsh/ruff-vscode) and [more](https://github.com/charliermarsh/ruff-lsp)
+    - 🌎 Monorepo-friendly, with [hierarchical and cascading configuration](https://beta.ruff.rs/docs/configuration/#pyprojecttoml-discovery)
     - [mypy](https://mypy.readthedocs.io/en/stable/)
     - [deptry](https://github.com/fpgmaas/deptry/)
 - TODO: Publishing to Biolexis Space Package Repo
@@ -51,6 +50,7 @@ We have taken inspiration from the following project:
   - [Docker](https://www.docker.com/)
 
 ---
+
 <p align="center">
   <a href="https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry/files/main/docs">Documentation</a> \
 - <a href="https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry-example">Example</a> -
@@ -59,16 +59,13 @@ We have taken inspiration from the following project:
 
 ---
 
-
-
-
 ## Quickstart
 
 On your local machine, navigate to the directory in which you want to
 create a project directory, and run the following two commands:
 
 <!--- ``` bash
-pip install cookiecutter-poetry 
+pip install cookiecutter-poetry
 ccp
 ```
 
@@ -80,12 +77,11 @@ pip install cookiecutter
 cookiecutter https://github.com/fpgmaas/cookiecutter-poetry.git
 ```
     --->
-    
 
 Create a repository on GitHub, and then run the following commands, replacing `<project-name>`, with the name that you gave the Github repository and
 `<github_author_handle>` with your Github username.
 
-``` bash
+```bash
 cd <project_name>
 git init -b main
 git add .
@@ -96,9 +92,9 @@ git push -u origin main
 
 Finally, install the environment and the pre-commit hooks with
 
- ```bash
- make install
- ```
+```bash
+make install
+```
 
 You are now ready to start development on your project! The CI/CD
 pipeline will be triggered when you open a pull request, merge to main,
