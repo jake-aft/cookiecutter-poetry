@@ -108,7 +108,7 @@ make install
 Check out what you can do with the Makefile
 
 ```bash
-Make help
+make help
 ```
 
 You are now ready to start development on your project! The CI/CD
