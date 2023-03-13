@@ -14,7 +14,6 @@
 [![License](https://img.shields.io/github/license/fpgmaas/cookiecutter-poetry)](https://img.shields.io/github/license/fpgmaas/cookiecutter-poetry)
  -->
 
-
 **_This is a modern Cookiecutter template that can be used to initiate a Python project with all the necessary tools for development, testing, and deployment._**
 We have taken inspiration from the following project:
 [fpgmaas/cookiecutter-poetry](https://raw.githubusercontent.com/fpgmaas/cookiecutter-poetry/main)
