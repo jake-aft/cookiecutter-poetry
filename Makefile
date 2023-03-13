@@ -28,6 +28,26 @@ install: ## Install the poetry environment
 	@echo "🚀 Creating virtual environment using pyenv and poetry"
 	@poetry install
 	@poetry shell
+	@pre-commit install --hook-type pre-push
+	@pre-commit install --hook-type post-commit
+	@echo "Checking Pre-Commit Instal"
+	@pre-commit --version
+	@echo "Running All Pre-Commits"
+	@pre-commit run --all-files
+
+	
+.PHONY: pre-commit-check
+	@poetry shell
+	@echo "Cleaning"
+	@pre-commit clean
+	@echo "Installing Pre-Push and Post Commit Hooks"
+	@pre-commit install --hook-type pre-push
+	@pre-commit install --hook-type post-commit
+	@echo "Checking Pre-Commit Instal"
+	@pre-commit --version
+	@echo "Running All Pre-Commits"
+	@pre-commit run --all-files
+
 
 .PHONY: check
 check: ## Run code quality tools.

@@ -85,7 +85,7 @@ pip install cookiecutter
 cookiecutter https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry
 ```
 
-    --->
+### Create your new project
 
 Create a repository on GitHub, and then run the following commands, replacing `<project-name>`, with the name that you gave the Github repository and
 `<github_author_handle>` with your Github username.
