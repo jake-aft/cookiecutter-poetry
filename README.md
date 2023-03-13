@@ -17,11 +17,12 @@ we have taken inspiration from the following project:
 [fpgmaas/cookiecutter-poetry](https://raw.githubusercontent.com/fpgmaas/cookiecutter-poetry/main)
 
 - [Poetry](https://python-poetry.org/) for dependency management
-- CI/CD with [GitHub Actions](https://github.com/features/actions)
+- TODO: REPLACE with Space Automation
+  - CI/CD with [GitHub Actions](https://github.com/features/actions)
 - Pre-commit hooks with [pre-commit](https://pre-commit.com/)
 - Code quality with [black](https://pypi.org/project/black/), [ruff](https://github.com/charliermarsh/ruff), [mypy](https://mypy.readthedocs.io/en/stable/), and [deptry](https://github.com/fpgmaas/deptry/)
-- Publishing to Biolexis Space Package Repo
-- Publishing to [Pypi](https://pypi.org) or [Artifactory](https://jfrog.com/artifactory) by creating a new release on GitHub
+- TODO: Publishing to Biolexis Space Package Repo
+  - Publishing to [Pypi](https://pypi.org) or [Artifactory](https://jfrog.com/artifactory) by creating a new release on GitHub
 - Testing and coverage with [pytest](https://docs.pytest.org/en/7.1.x/) and [codecov](https://about.codecov.io/)
 - Documentation with [MkDocs](https://www.mkdocs.org/)
 - Compatibility testing for multiple versions of Python with [Tox](https://tox.wiki/en/latest/)
@@ -29,8 +30,8 @@ we have taken inspiration from the following project:
 
 ---
 <p align="center">
-  <a href="https://fpgmaas.github.io/cookiecutter-poetry/">Documentation</a> - <a href="https://github.com/fpgmaas/cookiecutter-poetry-example">Example</a> -
-  <a href="https://pypi.org/project/cookiecutter-poetry/">PyPi</a>
+  <a href="https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry/files/main/docs">Documentation</a> - <a href="https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry-example">Example</a> -
+  <a href="https://biolexistx.jetbrains.space/p/blx-cc/packages/pypi/blx-py-pkg-test/blx-cookiecutter-poetry-exmp?v=0.0.1&tab=overview">Biolexis Space Python Package</a>
 </p>
 
 ---
