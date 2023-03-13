@@ -35,7 +35,7 @@ install: ## Install the poetry environment
 	@echo "Running All Pre-Commits"
 	@pre-commit run --all-files
 
-	
+
 .PHONY: pre-commit-check
 	@poetry shell
 	@echo "Cleaning"
