@@ -70,17 +70,18 @@ We have taken inspiration from the following project:
 On your local machine, navigate to the directory in which you want to
 create a project directory, and run the following two commands:
 
+#### TODO: Install from BLX space package reop
 <!--- ``` bash
-pip install cookiecutter-poetry
+pip install blx-cookiecutter-poetry
 ccp
 ```
 
-Alternatively, install `cookiecutter` and directly pass the URL to this
-Github repository to the `cookiecutter` command:
+Iinstall `cookiecutter` and directly pass the URL to this
+Space repository to the `cookiecutter` command:
 
 ``` bash
 pip install cookiecutter
-cookiecutter https://github.com/fpgmaas/cookiecutter-poetry.git
+cookiecutter https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry
 ```
     --->
 
@@ -92,7 +93,7 @@ cd <project_name>
 git init -b main
 git add .
 git commit -m "Init commit"
-git remote add origin git@github.com:<github_author_handle>/<project_name>.git
+git remote add origin git@git.jetbrains.space/biolexistx/blx-cc/<project_name>.git
 git push -u origin main
 ```
 
