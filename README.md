@@ -1,8 +1,10 @@
-<!-- ![BLX CookieCutter Poetry](static/images/cookie-3.png "BLX CookieCutter Poetry") -->
+![BLX CookieCutter Poetry](static/images/cookie-3.png "BLX CookieCutter Poetry")
 
+<!--
 <p align="center">
 <img width="600" src="static/images/cookie-3.png" alt="BLX CookieCutter Poetry">
 </p>
+-->
 
 <!--
 [![Release](https://img.shields.io/github/v/release/fpgmaas/cookiecutter-poetry)](https://pypi.org/project/cookiecutter-poetry/)
