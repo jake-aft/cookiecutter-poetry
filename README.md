@@ -1,4 +1,4 @@
-![BLX CookieCutter Poetry]("static//images/cookie-3.png" "BLX CookieCutter Poetry")
+![BLX CookieCutter Poetry](static/images/cookie-3.png "BLX CookieCutter Poetry")
 
 <!--
 [![Release](https://img.shields.io/github/v/release/fpgmaas/cookiecutter-poetry)](https://pypi.org/project/cookiecutter-poetry/)
@@ -108,10 +108,9 @@ To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookie
 
 ## Acknowledgements
 
-
 This project is partially based on
 [FPgmaas cookiecutter project ](https://github.com/fpgmaas/cookiecutter-poetry.git)
-which acknowledges - 
+which acknowledges -
 [Audrey Feldroy\'s](https://github.com/audreyfeldroy)\'s great
 [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage)
 repository.
