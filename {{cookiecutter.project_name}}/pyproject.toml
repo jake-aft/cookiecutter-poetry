@@ -7,7 +7,7 @@ repository = "https://github.com/{{cookiecutter.author_github_handle}}/{{cookiec
 documentation = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}/"
 readme = "README.md"
 packages = [
-  {include = "{{cookiecutter.project_slug}}"}
+    {include = "{{cookiecutter.project_slug}}"}
 ]
 
 [tool.poetry.dependencies]

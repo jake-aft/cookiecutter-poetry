@@ -1,11 +1,11 @@
-site_name: cookiecutter-poetry
-repo_url: https://github.com/fpgmaas/cookiecutter-poetry
-site_url: https://fpgmaas.github.io/cookiecutter-poetry
-site_description: A cookiecutter template for Python projects that use Poetry for its dependency management
-site_author: Florian Maas
+site_name: blx-cookiecutter-poetry
+repo_url: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry 
+site_url: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry 
+site_description: A cookiecutter template for Biolexis Python projects that use Poetry for its dependency management
+site_author: Biolexis AMPS Team
 edit_uri: edit/main/docs/
-repo_name: fpgmaas/cookiecutter-poetry
-copyright: Maintained by <a href="https://fpgmaas.com">Florian</a>.
+repo_name: blx-cookiecutter-poetry
+copyright: Maintained by <a href="https://biolexistx.com">BLX AMPS</a>.
 
 nav:
   - Home: index.md
@@ -49,9 +49,9 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/fpgmaas/cookiecutter-poetry
+      link: https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry 
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/cookiecutter-poetry/
+      link: https://biolexistx.jetbrains.space/p/blx-cc/packages 
 markdown_extensions:
   - toc:
       permalink: true

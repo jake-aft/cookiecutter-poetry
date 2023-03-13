@@ -10,16 +10,16 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 bake-and-test-deploy: 
 	@rm -rf cookiecutter-poetry-example || true
 	@cookiecutter --no-input . --overwrite-if-exists \
-		author="Florian Maas" \
-		email="fpgmaas@gmail.com" \
-		github_author_handle=fpgmaas \
-		project_name=cookiecutter-poetry-example \
-		project_slug=cookiecutter_poetry_example 
+		author="Biolexis AMPS Team" \
+		email="amps@biolexistx.com" \
+		github_author_handle=blx-amps \
+		project_name=blx-cookiecutter-poetry \
+		project_slug=blx_cookiecutter_poetry 
 	@cd cookiecutter-poetry-example; poetry lock && \
 		git init -b main && \
 		git add . && \
 		git commit -m "init commit" && \
-		git remote add origin git@github.com:fpgmaas/cookiecutter-poetry-example.git && \
+		git remote add origin ssh://git@git.jetbrains.space/biolexistx/blx-cc/blx-cookiecutter-poetry.git && \
 		git push -f origin main
 
 
