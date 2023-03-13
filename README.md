@@ -1,6 +1,6 @@
 
 
-![BLX CookieCutter Poetry]("docs/static/cookie-3.png" "BLX CookieCutter Poetry")
+![BLX CookieCutter Poetry]("static//images/cookie-3.png" "BLX CookieCutter Poetry")
 
 
 
