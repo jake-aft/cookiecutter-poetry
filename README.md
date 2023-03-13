@@ -71,7 +71,8 @@ On your local machine, navigate to the directory in which you want to
 create a project directory, and run the following two commands:
 
 #### TODO: Install from BLX space package reop
-``` bash
+
+```bash
 # pip install blx-cookiecutter-poetry
 # ccp
 ```
@@ -79,10 +80,11 @@ create a project directory, and run the following two commands:
 Install `cookiecutter` and directly pass the URL to this
 Space repository to the `cookiecutter` command:
 
-``` bash
+```bash
 pip install cookiecutter
 cookiecutter https://biolexistx.jetbrains.space/p/blx-cc/repositories/blx-cookiecutter-poetry
 ```
+
     --->
 
 Create a repository on GitHub, and then run the following commands, replacing `<project-name>`, with the name that you gave the Github repository and
