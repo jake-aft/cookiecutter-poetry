@@ -43,7 +43,7 @@ we have taken inspiration from the following project:
 On your local machine, navigate to the directory in which you want to
 create a project directory, and run the following two commands:
 
-``` bash
+<!--- ``` bash
 pip install cookiecutter-poetry 
 ccp
 ```
@@ -55,6 +55,8 @@ Github repository to the `cookiecutter` command:
 pip install cookiecutter
 cookiecutter https://github.com/fpgmaas/cookiecutter-poetry.git
 ```
+    --->
+    
 
 Create a repository on GitHub, and then run the following commands, replacing `<project-name>`, with the name that you gave the Github repository and
 `<github_author_handle>` with your Github username.
