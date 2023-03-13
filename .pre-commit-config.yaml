@@ -23,10 +23,6 @@ repos:
     rev: v0.0.254
     hooks:
       - id: ruff
-  - repo: https://github.com/psf/black
-    rev: 23.1.0
-    hooks:
-      - id: black
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
@@ -103,8 +99,6 @@ repos:
           - main
       - id: requirements-txt-fixer
         stages: [ post-commit, push ]
-      - id: sort-simple-yaml
-        stages: [ post-commit, push ]
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.1.1
     hooks:
@@ -156,11 +150,6 @@ repos:
           - --strict
           - -- ignore
           - .license-check.yaml
-        stages: [ post-commit, push ]
-  - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.19.1
-    hooks:
-      - id: gitlint
         stages: [ post-commit, push ]
   - repo: https://gitlab.com/iamlikeme/nbhooks
     rev: 1.0.0
