@@ -71,13 +71,12 @@ On your local machine, navigate to the directory in which you want to
 create a project directory, and run the following two commands:
 
 #### TODO: Install from BLX space package reop
-
-<!--- ``` bash
-pip install blx-cookiecutter-poetry
-ccp
+``` bash
+# pip install blx-cookiecutter-poetry
+# ccp
 ```
 
-Iinstall `cookiecutter` and directly pass the URL to this
+Install `cookiecutter` and directly pass the URL to this
 Space repository to the `cookiecutter` command:
 
 ``` bash
