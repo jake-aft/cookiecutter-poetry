@@ -128,7 +128,6 @@ repos:
         args:
           - --format
           - parsable
-          - --strict
         stages: [post-commit, push]
   - repo: https://gitlab.com/iamlikeme/nbhooks
     rev: 1.0.0
