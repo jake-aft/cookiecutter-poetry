@@ -27,7 +27,8 @@ repos:
     rev: v0.0.254
     hooks:
       - id: ruff
-      args: [ --autofix]
+        args: [ --autofix]
+        stages: [post-commit, push]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
