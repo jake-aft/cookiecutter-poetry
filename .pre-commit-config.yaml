@@ -23,11 +23,11 @@
 # - pre-commit run --all-files
 
 repos:
-  #- repo: https://github.com/charliermarsh/ruff-pre-commit
-  #rev: v0.0.254
-  #hooks:
-  #- id: ruff
-  #args: [ --autofix]
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.254
+    hooks:
+      - id: ruff
+      args: [ --autofix]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
@@ -170,8 +170,3 @@ repos:
       - id: nbqa-isort
         additional_dependencies: [ isort==5.7.0 ]
         args: [ --nbqa-mutate ]
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.254
-    hooks:
-      - id: ruff
-        args: [ --fix, --exit-non-zero-on-fix ]
