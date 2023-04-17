@@ -17,24 +17,35 @@ include = [
 ]
 
 [tool.poetry.dependencies]
+# Python version Only
 python = ">=3.8,<4.0"
-cookiecutter = "^2.1.1"
-isort = "^5.12.0"
-bandit = "^1.7.5"
-pylint = "^2.17.0"
 
-[tool.poetry.group.dev.dependencies]
+# This group is for the main dependencies of the project
+[tool.poetry.group.main-primary.dependencies]
+cookiecutter = "^2.1.1"
+
+# This group is for the secondary dependencies of the project, Not the critical to the project.
+[tool.poetry.group.main-secondary.dependencies]
+pre-commit = "*"
+ruff = "*"
+
+# This group is for the main development dependencies of the project
+[tool.poetry.group.dev-primary.dependencies]
 pytest = "^7.2.0"
-pre-commit = "^2.20.0"
-pytest-cookies = "^0.6.1"
-tox = "^3.25.1"
-deptry = "^0.6.4"
-mypy = "^0.991"
-pytest-cov = "^4.0.0"
-ruff = "^0.0.235"
-isort = "^5.12.0"
-bandit = "^1.7.5"
-pylint = "^2.17.0"
+
+# This group is for the secondary development dependencies of the project
+[tool.poetry.group.dev-secondary.dependencies]
+pytest-playwright = "*"
+pytest-cookies = "*"
+tox = "*"
+deptry = "*"
+mypy = "*"
+pytest-cov = "*"
+bandit = "*"
+pylint = "*"
+isort = "*"
+mccabe = "*"
+requirements-tools = "*"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.4.2"
@@ -44,13 +55,41 @@ mkdocs-material = "^8.5.10"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.black]
-line-length = 120
-target-version = ["py37"]
-preview = true
-
 [tool.poetry.scripts]
-ccp = "cookiecutter_poetry.cli:main"
+
+[tool.isort]
+skip = [".gitignore", ".dockerignore"]
+extend_skip = [".md", ".json"]
+skip_glob = ["docs/*"]
+include_trailing_comma = ["false"]
+use_parentheses = ["false"]
+color_output = ["true"]
+force_single_line = ["true"]
+force_sort_within_sections = ["true"]
+line_length = 80
+lines_after_imports = 2
+lines_between_types = 2
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "APPLICATION", "LOCALFOLDER"]
+ensure_newline_before_comments = ["true"]
+order_by_type = ["false"]
+lexicographical = ["true"]
+commment_prefix = ["# ISORT- "]
+multi_line_output = 3
+# Multi line output
+# 0-grid
+#  1-vertical
+#  2-hanging
+#  3-vert-hanging
+#  4-vert-grid
+#  5-vert-grid-grouped
+#  6-deprecated-alias-for-5
+#  7-noqa
+#  8-vertical-hanging-indent-bracket
+#  9-vertical-prefix-from-module-import
+#  10-hanging-indent-with-parentheses
+
+
+
 
 [tool.coverage.report]
 skip_empty = true
@@ -69,79 +108,177 @@ warn_return_any = "True"
 warn_unused_ignores = "True"
 show_error_codes = "True"
 
-[tool.deptry]
+[tool.ruff]
 extend_exclude = [
     "{{cookiecutter.project_name}}"
 ]
 ignore_obsolete = [
     "cookiecutter"
 ]
-
-[tool.ruff]
-target-version = "py37"
-extend-exclude = [
-    "pyproject.toml"
-]
 line-length = 120
 fix = true
-select = [
-    # flake8-2020
-    "YTT",
-    # flake8-bandit
-    "S",
-    # flake8-bugbear
-    "B",
-    # flake8-builtins
-    "A",
-    # flake8-comprehensions
-    "C4",
-    # flake8-debugger
-    "T10",
-    # flake8-simplify
-    "SIM",
-    # isort
-    "I",
-    # mccabe
-    "C90",
-    # pycodestyle
-    "E", "W",
-    # pyflakes
-    "F",
-    # pygrep-hooks
-    "PGH",
-    # pyupgrade
-    "UP",
-    # ruff
-    "RUF",
-    # tryceratops
-    "TRY",
-]
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = []
+# Disable autofix for some rules.
+unfixable = [ "ERA" ]
+target-version = "py310"
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 ignore = [
     # LineTooLong
     "E501",
     # DoNotAssignLambda
     "E731",
 ]
+select = [
+    # Pyflakes (F)
+    "F",
+    # pycodestyle (E - ERROR W - WARNING)
+    "E",
+    "W",
+    # mccabe (C90)
+    "C90",
+    # isort (I)
+    "I",
+    # pep8-naming (N)
+    "N",
+    # pydocstyle (D)
+    "D",
+    # pyupgrade (UP)
+    "UP",
+    # flake8-2020 (YTT)
+    "YTT",
+    # flake8-annotations (ANN)
+    "ANN",
+    # flake8-bandit (S)
+    "S",
+    # flake8-blind-except (BLE)
+    "BLE",
+    # flake-8-boolean-trap (FBT)
+    "FBT",
+    # flake8-bugbear (B)
+    "B",
+    # flake8-builtins (A)
+    "A",
+    # flake8-comas (COM)
+    # TODO - REVIEW THIS ONE and apply which flavour we want to have
+    "COM",
+    # flake8-comprehensions (C4)
+    "C4",
+    # flake8-datetimez (DTZ)
+    "DTZ",
+    # flake8-debugger (T10)
+    "T10",
+    # flake8-errmsg (EM)
+    "EM",
+    # flake8-executable (EXE)
+    # TODO - REVIEW THIS ONE
+    "EXE",
+    # flake8-implicit-str-concat (ICS)
+    # TODO - REVIEW THIS ONE
+    "ICS",
+    # flake8-import-convention (ICN)
+    # TODO - This creates standard import aliases for mome packages
+    # TODO - https://github.com/joaopalmeiro/flake8-import-conventions
+    "ICN",
+    # flake8-logging-format (G)
+    # TODO - REVIEW THIS ONE
+    "G",
+    # flake8-no-pep420 (INP)
+    # TODO - Implicit namespace packages are directories of Python files without an __init__.py file.
+    #  They’re valid and importable, but they break many tools, such as:
+    #   unittest test discovery (and by extension, Django’s test runner)
+    #   Coverage.py
+    #   Mypy with its –namespace-package option
+    #   pytest
+    "INP",
+    # flake8-pie (PIE)
+    # TODO - REVIEW THIS ONE
+    #   https://pypi.org/project/flake8-pie/
+    "PIE",
+    # flake8-print (T20)
+    "T20",
+    # flake8-pyi (PYI)
+    # TODO - some type of type hinting stub files ???
+    # "PYI",
+    # flake8-pytest-style (PT)
+    "PT",
+    # flake8-quotes (Q)
+    # https://pypi.org/project/flake8-quotes/
+    "Q",
+    # flake8-raise (RSE)
+    "RSE",
+    # flake8-return (RET)
+    "RET",
+    # flake8-self (SLF)
+    "SLF",
+    # flake8-simplify (SIM)
+    # TODO - helps you simplify your code. Review this and see if we need / want it we do have mcabe
+    #  https://pypi.org/project/flake8-simplify/
+    "SIM",
+    # flake8-tidy-imports (TID)
+    # TODO - We dont need this now, as we will use isort
+    # "TID",
+    # flake8-type-checking (TCH)
+    # TODO - We dont need this now, as we will use PyLint
+    # "TCH",
+    # flake8-unused-arguments (ARG)
+    "ARG",
+    # flake8-use-pathlib (PTH)
+    "PTH",
+    # eradicate (ERA) - Commented Out Code
+    # TODO do not FIX this one
+    "ERA",
+    # pandas-vet (PD)
+    # TODO - REVIEW THIS ONE
+    # "PD",
+    # pygrep-hooks (PGH)
+    # TODO - REVIEW THIS ONE
+    # "PGH",
+    # Pylint (PL)
+    "PL",
+    #    Convention (PLC)
+    "PLC",
+    #    Error (PLE)
+    "PLE",
+    #    Refactor (PLR)
+    "PLR",
+    #    Warning (PLW)
+    "PLW",
+    # tryceratops (TRY)
+    # TODO - REVIEW THIS ONE
+    # "TRY",
+    # NumPy=specific rules (NPY)
+    "NPY",
+    # Ruff-specific rules (RUF)
+    "RUF"
+]
 
-[tool.ruff.per-file-ignores]
-"tests/*" = ["S101"]
-# "pyproject.toml" = [
-    # percent-format-invalid-format
-#     "F501",
-    # percent-format-expected-mapping
-#     "F502",
-    # percent-format-expected-sequence
-#     "F503",
-    # percent-format-extra-named-arguments
-#     "F504",
-    # percent-format-missing-argument
-#     "F505",
-    # percent-format-mixed-positional-and-named
-#     "F506",
-    # percent-format-positional-count-mismatch
-#     "F507",
-    # percent-format-star-requires-sequence
-#     "F508",
-    # percent-format-unsupported-format-character
-#     "F509"
-# ]
+extend-exclude = [
+    "pyproject.toml",
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "tests/*"
+]
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10

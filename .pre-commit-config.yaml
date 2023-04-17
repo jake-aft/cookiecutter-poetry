@@ -1,5 +1,9 @@
 # .pre-commit-config.yaml
-#
+# =======================
+# Jake Carter
+# New version - 2023-03-14
+# =======================
+
 # precommit hooks installation
 # =======================
 # pre-commit clean
@@ -23,6 +27,7 @@ repos:
     rev: v0.0.254
     hooks:
       - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
@@ -45,19 +50,11 @@ repos:
             out_precommit.txt|
           )$
         stages: [ post-commit, push ]
-      - id: check-builtin-literals
-        stages: [ post-commit, push ]
       - id: check-merge-conflict
         stages: [ post-commit, push ]
       - id: check-added-large-files
         stages: [ post-commit, push ]
       - id: check-ast
-        stages: [ post-commit, push ]
-      - id: check-builtin-literals
-        stages: [ post-commit, push ]
-      - id: check-case-conflict
-        stages: [ post-commit, push ]
-      - id: check-docstring-first
         stages: [ post-commit, push ]
       - id: check-json
         stages: [ post-commit, push ]
@@ -97,8 +94,6 @@ repos:
           - dev
           - --branch
           - main
-      - id: requirements-txt-fixer
-        stages: [ post-commit, push ]
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.1.1
     hooks:
@@ -126,20 +121,6 @@ repos:
             out_precommit.txt|
           )$
         stages: [ post-commit, push ]
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.12.0
-    hooks:
-      - id: isort
-        stages: [ post-commit, push ]
-  - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.5
-    hooks:
-      - id: bandit
-        args:
-          - --exclude
-          - setup.py,bin,tests
-        stages: [ post-commit, push ]
-        additional_dependencies: [ toml ]
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.29.0
     hooks:
@@ -173,14 +154,6 @@ repos:
         stages: [ post-commit, push ]
       - id: license-check-pipenv
         stages: [ post-commit, push ]
-  - repo: https://github.com/tox-dev/tox-ini-fmt
-    rev: 0.6.1
-    hooks:
-      - id: tox-ini-fmt
-        args:
-          - -p
-          - fix_lint,type
-        stages: [ post-commit, push ]
   - repo: https://github.com/sirwart/ripsecrets.git
     rev: v0.1.5
     hooks:
@@ -191,44 +164,6 @@ repos:
     hooks:
       - id: dockerfilelint
         stages: [ post-commit, push ]
-  - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: v1.10.0
-    hooks:
-      - id: python-use-type-annotations
-        stages: [ post-commit, push ]
-      - id: python-check-blanket-noqa
-        stages: [ post-commit, push ]
-        name: check blanket noqa
-        entry: '(?i)# noqa(?!: )'
-        language: pygrep
-        types: [ python ]
-      - id: python-check-blanket-type-ignore
-        stages: [ post-commit, push ]
-        name: check blanket type ignore
-        entry: '# type:? *ignore(?!\[|\w)'
-        language: pygrep
-        types: [ python ]
-      - id: python-no-eval
-        stages: [ post-commit, push ]
-        name: check for eval()
-        description: A quick check for the `eval()` built-in function
-        entry: \beval\(
-        language: pygrep
-        types: [ python ]
-      - id: python-no-log-warn
-        stages: [ post-commit, push ]
-        name: use logger.warning(
-        description: A quick check for the deprecated `.warn()` method
-        entry: (?<!warnings)\.warn\(
-        language: pygrep
-        types: [ python ]
-      - id: python-use-type-annotations
-        stages: [ post-commit, push ]
-        name: type annotations not comments
-        description: Enforce type annotations are used not of type comments
-        entry: '# type(?!: *ignore([^a-zA-Z0-9]|$))'
-        language: pygrep
-        types: [ python ]
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.6.3
     hooks:
