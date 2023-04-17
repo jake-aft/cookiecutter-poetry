@@ -26,13 +26,13 @@ repos:
     rev: v0.0.254
     hooks:
       - id: ruff
-        args: [ --autofix]
+        args: [--autofix]
         stages: [post-commit, push]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
       - id: check-builtin-literals
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: trailing-whitespace
         exclude: |
           (?x)^(
@@ -49,42 +49,42 @@ repos:
             .*.yaml|
             out_precommit.txt|
           )$
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-merge-conflict
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-added-large-files
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-ast
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-json
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-shebang-scripts-are-executable
         exclude: .*.ipynb$, __init__.py$, setup.py$
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-symlinks
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-toml
-        additional_dependencies: [ toml ]
-        stages: [ post-commit, push ]
+        additional_dependencies: [toml]
+        stages: [post-commit, push]
       - id: check-vcs-permalinks
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-xml
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: check-yaml
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: debug-statements
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: destroyed-symlinks
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: detect-aws-credentials
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: detect-private-key
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: end-of-file-fixer
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
         exclude: .idea
       - id: mixed-line-ending
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: name-tests-test
         args:
           - --pytest-test-first
@@ -98,7 +98,7 @@ repos:
     rev: v1.1.1
     hooks:
       - id: mypy
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v3.0.0-alpha.6
     hooks:
@@ -120,7 +120,7 @@ repos:
             /.idea*|
             out_precommit.txt|
           )$
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.29.0
     hooks:
@@ -131,7 +131,7 @@ repos:
           - --strict
             #- -- ignore
             #- .license-check.yaml
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
   - repo: https://gitlab.com/iamlikeme/nbhooks
     rev: 1.0.0
     hooks:
@@ -139,34 +139,34 @@ repos:
         args:
           - --meta
           - --ExecuteTime
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.4.0
     hooks:
       - id: detect-secrets
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
   - repo: https://github.com/kontrolilo/kontrolilo
     rev: v2.2.0
     hooks:
       - id: license-check-configuration-lint
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: license-check-npm
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
       - id: license-check-pipenv
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
   - repo: https://github.com/sirwart/ripsecrets.git
     rev: v0.1.5
     hooks:
       - id: ripsecrets
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
   - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
     rev: v0.1.0
     hooks:
       - id: dockerfilelint
-        stages: [ post-commit, push ]
+        stages: [post-commit, push]
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.6.3
     hooks:
       - id: nbqa-isort
-        additional_dependencies: [ isort==5.7.0 ]
-        args: [ --nbqa-mutate ]
+        additional_dependencies: [isort==5.7.0]
+        args: [--nbqa-mutate]
