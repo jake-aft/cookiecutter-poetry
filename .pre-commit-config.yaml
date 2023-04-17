@@ -129,7 +129,7 @@ repos:
           - --format
           - parsable
           - --strict
-          - -- ignore
+            #- -- ignore
           - .license-check.yaml
         stages: [ post-commit, push ]
   - repo: https://gitlab.com/iamlikeme/nbhooks
