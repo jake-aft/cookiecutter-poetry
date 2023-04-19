@@ -31,8 +31,8 @@ This command takes two arguments:
 export PRECOMMIT_DEPLOY_REPO="ssh://git@git.jetbrains.space/biolexistx/style/precommit_deployment_config.git"
 ```
 
-Add the the precommit_deploy project as a submodule in the blx_myapp project directory utilities
-**_Ensure you are in the root directory of the project_**
+Add the the precommit*deploy project as a submodule in the blx_myapp project directory utilities
+\*\*\_Ensure you are in the root directory of the project*\*\*
 
 ```bash
 # ADD SUBMODULE
