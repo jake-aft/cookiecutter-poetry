@@ -32,11 +32,11 @@ export PRECOMMIT_DEPLOY_REPO="ssh://git@git.jetbrains.space/biolexistx/style/pre
 ```
 
 Add the the precommit_deploy project as a submodule in the blx_myapp project directory utilities
-***Ensure you are in the root directory of the project***
+**_Ensure you are in the root directory of the project_**
 
 ```bash
 # ADD SUBMODULE
 git submodule add $PRECOMMIT_DEPLOY_REPO z_utilities/precommit_deploy
-# OR UPDATE SUBMODULE 
+# OR UPDATE SUBMODULE
 git submodule update --init --recursive
 ```
