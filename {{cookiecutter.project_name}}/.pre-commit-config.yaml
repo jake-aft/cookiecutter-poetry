@@ -1,278 +1,171 @@
----
-# .pre-commit-config.yaml
+# =======================
+# Jake Carter
+# New version - 2023-03-14
+# =======================
 
 # precommit hooks installation
 # =======================
 # pre-commit clean
 # pre-commit install
 # pre-commit install-hooks
-
-
+#
 # =======================
 # - pre-commit autoupdate
-
+#
 # - pre-commit run black
-
-
+#
 # continuous integration
 # ======================
-
+#
 # Manual Run
 # ======================
 # - pre-commit run --all-files
 
 repos:
-    - repo: https://github.com/charliermarsh/ruff-pre-commit
-      rev: "v0.0.230"
-      hooks:
-        - id: ruff
-    - repo: https://github.com/psf/black
-      rev: "22.8.0"
-      hooks:
-        - id: black
-    - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.3.0
-      hooks:
-          - id: check-builtin-literals
-            stage: [post-commit, pre-push]
-          - id: trailing-whitespace
-            exclude: |
-                (?x)^(
-                  .*.txt|
-                  .*.csv|
-                  .*.sdf|
-                  .*.pdb|
-                  .*.mmCIF|
-                  .*.smi|
-                  .*.tsv|
-                  .*.tab|
-                  .*.fasta|
-                  .*.ent|
-                  .*.yaml|
-                  out_precommit.txt|
-                )$
-            stage: [post-commit, pre-push]
-          - id: check-builtin-literals
-            stage: [post-commit, pre-push]
-          - id: check-merge-conflict
-            stage: [post-commit, pre-push]
-          - id: check-added-large-files
-            stage: [post-commit, pre-push]
-          - id: check-ast
-            stage: [post-commit, pre-push]
-          - id: check-builtin-literals
-            stage: [post-commit, pre-push]
-          - id: check-case-conflict
-            stage: [post-commit, pre-push]
-          - id: check-docstring-first
-            stage: [post-commit, pre-push]
-          - id: check-json
-            stage: [post-commit, pre-push]
-          - id: check-shebang-scripts-are-executable
-            exclude: .*.ipynb$, __init__.py$, setup.py$
-            stage: [post-commit, pre-push]
-          - id: check-symlinks
-            stage: [post-commit, pre-push]
-          - id: check-toml
-            additional_dependencies: [toml]
-            stage: [post-commit, pre-push]
-          - id: check-vcs-permalinks
-            stage: [post-commit, pre-push]
-          - id: check-xml
-            stage: [post-commit, pre-push]
-          - id: check-yaml
-            stage: [post-commit, pre-push]
-          - id: debug-statements
-            stage: [post-commit, pre-push]
-          - id: destroyed-symlinks
-            stage: [post-commit, pre-push]
-          - id: detect-aws-credentials
-            stage: [post-commit, pre-push]
-          - id: detect-private-key
-            stage: [post-commit, pre-push]
-          - id: end-of-file-fixer
-            stage: [post-commit, pre-push]
-            exclude: .idea
-          - id: mixed-line-ending
-            stage: [post-commit, pre-push]
-          - id: name-tests-test
-            args:
-                - --pytest-test-first
-          - id: no-commit-to-branch
-            args:
-                - --branch
-                - dev
-                - --branch
-                - main
-          - id: requirements-txt-fixer
-            stage: [post-commit, pre-push]
-          - id: sort-simple-yaml
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/pre-commit/mirrors-mypy
-      rev: v0.971
-      hooks:
-          - id: mypy
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/asottile/setup-cfg-fmt
-      rev: v2.0.0
-      hooks:
-          - id: setup-cfg-fmt
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/pre-commit/mirrors-prettier
-      rev: v2.7.1
-      hooks:
-          - id: prettier
-            exclude: |
-                (?x)^(
-                  .*.txt|
-                  .*.csv|
-                  .*.sdf|
-                  .*.pdb|
-                  .*.mmCIF|
-                  .*.smi|
-                  .*.tsv|
-                  .*.tab|
-                  .*.fasta|
-                  .*.ent|
-                  .*.yaml|
-                  .*.yml|
-                  /.idea*|
-                  out_precommit.txt|
-                )$
-            stage: [post-commit, pre-push]
-    - repo: https://gitlab.com/pycqa/flake8
-      rev: 3.9.2
-      hooks:
-          - id: flake8
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/PyCQA/isort
-      rev: 5.10.1
-      hooks:
-          - id: isort
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/PyCQA/bandit
-      rev: 1.7.4
-      hooks:
-          - id: bandit
-            args:
-                - --exclude
-                - setup.py,bin,tests
-            stage: [post-commit, pre-push]
-            additional_dependencies: [toml]
-    - repo: https://github.com/PyCQA/prospector
-      rev: 1.7.7
-      hooks:
-          - id: prospector
-            args:
-                - --profile
-                - .prospector
-            stage: [post-commit, pre-pushdd]
-    - repo: https://github.com/terrencepreilly/darglint
-      rev: v1.8.1
-      hooks:
-          - id: darglint
-            exclude: ^(docs|tests|setup.py)
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/adrienverge/yamllint.git
-      rev: v1.27.1
-      hooks:
-          - id: yamllint
-            args:
-                - --format
-                - parsable
-                - --strict
-                - -- ignore
-                - .license-check.yaml
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/jorisroovers/gitlint
-      rev: v0.17.0
-      hooks:
-          - id: gitlint
-            stage: [post-commit, pre-push]
-    - repo: https://gitlab.com/iamlikeme/nbhooks
-      rev: 1.0.0
-      hooks:
-          - id: nb-ensure-clean
-            args:
-                - --meta
-                - --ExecuteTime
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/Yelp/detect-secrets
-      rev: v1.3.0
-      hooks:
-          - id: detect-secrets
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/kontrolilo/kontrolilo
-      rev: v2.2.0
-      hooks:
-          - id: license-check-configuration-lint
-            stage: [post-commit, pre-push]
-          - id: license-check-npm
-            stage: [post-commit, pre-push]
-          - id: license-check-pipenv
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/tox-dev/tox-ini-fmt
-      rev: 0.5.2
-      hooks:
-          - id: tox-ini-fmt
-            args:
-                - -p
-                - fix_lint,type
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/sirwart/ripsecrets.git
-      rev: v0.1.5
-      hooks:
-          - id: ripsecrets
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
-      rev: v0.1.0
-      hooks:
-          - id: dockerfilelint
-            stage: [post-commit, pre-push]
-    - repo: https://github.com/pre-commit/pygrep-hooks
-      rev: v1.9.0
-      hooks:
-          - id: python-use-type-annotations
-            stage: [post-commit, pre-push]
-          - id: python-check-blanket-noqa
-            stage: [post-commit, pre-push]
-            name: check blanket noqa
-            entry: '(?i)# noqa(?!: )'
-            language: pygrep
-            types: [python]
-          - id: python-check-blanket-type-ignore
-            stage: [post-commit, pre-push]
-            name: check blanket type ignore
-            entry: '# type:? *ignore(?!\[|\w)'
-            language: pygrep
-            types: [python]
-          - id: python-no-eval
-            stage: [post-commit, pre-push]
-            name: check for eval()
-            description: A quick check for the `eval()` built-in function
-            entry: \beval\(
-            language: pygrep
-            types: [python]
-          - id: python-no-log-warn
-            stage: [post-commit, pre-push]
-            name: use logger.warning(
-            description: A quick check for the deprecated `.warn()` method
-            entry: (?<!warnings)\.warn\(
-            language: pygrep
-            types: [python]
-          - id: python-use-type-annotations
-            stage: [post-commit, pre-push]
-            name: type annotations not comments
-            description: Enforce type annotations are used not of type comments
-            entry: '# type(?!: *ignore([^a-zA-Z0-9]|$))'
-            language: pygrep
-            types: [python]
-    - repo: https://github.com/nbQA-dev/nbQA
-      rev: 0.7.0
-      hooks:
-          - id: nbqa-flake8
-            additional_dependencies: [flake8]
-            args: [--nbqa-mutate]
-          - id: nbqa-isort
-            additional_dependencies: [isort==5.7.0]
-            args: [--nbqa-mutate]
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.254
+    hooks:
+      - id: ruff
+        args: [autofix]
+        stages: [post-commit, push]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-builtin-literals
+        stages: [post-commit, push]
+      - id: trailing-whitespace
+        exclude: |
+          (?x)^(
+            .*.txt|
+            .*.csv|
+            .*.sdf|
+            .*.pdb|
+            .*.mmCIF|
+            .*.smi|
+            .*.tsv|
+            .*.tab|
+            .*.fasta|
+            .*.ent|
+            .*.yaml|
+            out_precommit.txt|
+          )$
+        stages: [post-commit, push]
+      - id: check-merge-conflict
+        stages: [post-commit, push]
+      - id: check-added-large-files
+        stages: [post-commit, push]
+      - id: check-ast
+        stages: [post-commit, push]
+      - id: check-json
+        stages: [post-commit, push]
+      - id: check-shebang-scripts-are-executable
+        exclude: .*.ipynb$, __init__.py$, setup.py$
+        stages: [post-commit, push]
+      - id: check-symlinks
+        stages: [post-commit, push]
+      - id: check-toml
+        additional_dependencies: [toml]
+        stages: [post-commit, push]
+      - id: check-vcs-permalinks
+        stages: [post-commit, push]
+      - id: check-xml
+        stages: [post-commit, push]
+      - id: check-yaml
+        stages: [post-commit, push]
+      - id: debug-statements
+        stages: [post-commit, push]
+      - id: destroyed-symlinks
+        stages: [post-commit, push]
+      - id: detect-aws-credentials
+        args:
+          - --allow-missing-credentials
+        stages: [post-commit, push]
+      - id: detect-private-key
+        stages: [post-commit, push]
+      - id: end-of-file-fixer
+        stages: [post-commit, push]
+        exclude: .idea
+      - id: mixed-line-ending
+        stages: [post-commit, push]
+      - id: name-tests-test
+        args:
+          - --pytest-test-first
+      - id: no-commit-to-branch
+        args:
+          - --branch
+          - dev
+          - --branch
+          - main
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.1.1
+    hooks:
+      - id: mypy
+        stages: [post-commit, push]
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.0-alpha.6
+    hooks:
+      - id: prettier
+        exclude: |
+          (?x)^(
+            .*.txt|
+            .*.csv|
+            .*.sdf|
+            .*.pdb|
+            .*.mmCIF|
+            .*.smi|
+            .*.tsv|
+            .*.tab|
+            .*.fasta|
+            .*.ent|
+            .*.yaml|
+            .*.yml|
+            /.idea*|
+            out_precommit.txt|
+          )$
+        stages: [post-commit, push]
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.29.0
+    hooks:
+      - id: yamllint
+        args:
+          - --format
+          - parsable
+        stages: [post-commit, push]
+  - repo: https://gitlab.com/iamlikeme/nbhooks
+    rev: 1.0.0
+    hooks:
+      - id: nb-ensure-clean
+        args:
+          - --meta
+          - --ExecuteTime
+        stages: [post-commit, push]
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        stages: [post-commit, push]
+  - repo: https://github.com/kontrolilo/kontrolilo
+    rev: v2.2.0
+    hooks:
+      - id: license-check-configuration-lint
+        stages: [post-commit, push]
+      - id: license-check-npm
+        stages: [post-commit, push]
+      - id: license-check-pipenv
+        stages: [post-commit, push]
+  - repo: https://github.com/sirwart/ripsecrets.git
+    rev: v0.1.5
+    hooks:
+      - id: ripsecrets
+        stages: [post-commit, push]
+  - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+    rev: v0.1.0
+    hooks:
+      - id: dockerfilelint
+        stages: [post-commit, push]
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.6.3
+    hooks:
+      - id: nbqa-isort
+        additional_dependencies: [isort==5.7.0]
+        args: [--nbqa-mutate]
