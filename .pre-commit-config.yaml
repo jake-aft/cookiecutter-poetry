@@ -12,11 +12,10 @@
 # =======================
 # - pre-commit autoupdate
 #
-# - pre-commit run black
-#
 # continuous integration
 # ======================
-#
+# Coming Soon
+
 # Manual Run
 # ======================
 # - pre-commit run --all-files
@@ -26,7 +25,7 @@ repos:
     rev: v0.0.254
     hooks:
       - id: ruff
-        args: [--autofix]
+        args: [autofix]
         stages: [post-commit, push]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -77,6 +76,8 @@ repos:
       - id: destroyed-symlinks
         stages: [post-commit, push]
       - id: detect-aws-credentials
+        args:
+          - --allow-missing-credentials
         stages: [post-commit, push]
       - id: detect-private-key
         stages: [post-commit, push]

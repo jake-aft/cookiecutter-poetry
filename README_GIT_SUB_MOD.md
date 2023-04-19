@@ -28,25 +28,15 @@ This command takes two arguments:
 **TODO:** Check what we need in the Space Automation as the REPO_URL
 
 ```bash
-export PRECOMMIT_REPO_URL="https://git.jetbrains.space/biolexistx/style/precommit_deployment_config.git"
-# OR if we need SSH
-export PRECOMMIT_DEPLOY_REPO_SSH="ssh://git@git.jetbrains.space/biolexistx/style/precommit_deployment_config.git"
-# OR Maybe more like this
-export PRECOMMIT_DEPLOY_REPO="URL or SSH AS ABOVE"
+export PRECOMMIT_DEPLOY_REPO="ssh://git@git.jetbrains.space/biolexistx/style/precommit_deployment_config.git"
 ```
 
 Add the the precommit_deploy project as a submodule in the blx_myapp project directory utilities
+***Ensure you are in the root directory of the project***
 
 ```bash
-git submodule add $PRECOMMIT_DEPLOY_REPO_URL blx_myapp/z_utilities/precommit_deploy
-git submodule add $PRECOMMIT_DEPLOY_REPO_SSH blx_myapp/z_utilities/precommit_deploy
+# ADD SUBMODULE
 git submodule add $PRECOMMIT_DEPLOY_REPO z_utilities/precommit_deploy
-```
-
-### Update the submodule
-
-**_Update the submodules happens automatically when you run:_**
-
-```bash
+# OR UPDATE SUBMODULE 
 git submodule update --init --recursive
 ```
